@@ -1,3 +1,18 @@
+あとで消す (ここから): 
+
+- test/stdlib/Thread_test.rb　を追加しようと yak shaving しまくって失敗したブランチ
+- https://github.com/ruby/ruby-signature/pull/67/files を見ると、少量のテストで型検査を発動するのが正しそう
+- 間違った内容
+- Ruby 2.7 の [test/ruby/test_thread.rb](https://github.com/ruby/ruby/blob/master/test/ruby/test_thread.rb) を test/stdlib/Thread_test.rb として使おうとしたのが判断間違いだった模様 orz
+- なので、 [tool/lib/test/unit/core_assertions.rb](https://github.com/ruby/ruby/blob/master/tool/lib/test/unit/core_assertions.rb) などを Ruby 2.7 ソースツリーからコピーしまくった。
+- 結局 `bundle exec ruby bin/test_runner.rb Thread` の結果は `87 runs, 265 assertions, 0 failures, 2 errors, 0 skips`
+- `assert_raise` がないとか、 `test/unit` が読み込めないとかの基本的なエラーはなくなったけど、目的・目標を見誤り失敗した。
+- 型検査が動く少量でシンプルなテストだけを書くのが作法にかなっていそうな感じ。
+- もっと空気を読んでから作業をするべきだった orz
+
+あとで消す (ここまで):
+
+
 # Ruby::Signature
 
 Ruby::Signature provides syntax and semantics definition for `the` Ruby Signature language, `.rbs` files.
