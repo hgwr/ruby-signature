@@ -9,4 +9,6 @@
 /.ruby-version
 /lib/ruby/signature/parser.rb
 /lib/ruby/signature/parser.output
+
 /vendor/bundle
+*~
