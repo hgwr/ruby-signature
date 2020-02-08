@@ -38,5 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "racc", "~> 1.4.15"
-  spec.add_development_dependency "minitest-reporters", "~> 1.3.6"
+  spec.add_development_dependency "minitest-reporters", "~> 1.4.2"
 end
